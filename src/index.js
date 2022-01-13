@@ -43,13 +43,13 @@ module.exports = function toReadable(number) {
   };
 
   const isOneDigit = number / 10 < 1;
-  const isTwoDigit = number / 10 > 1 && number / 100 < 1;
-  const isThreeDigit = number / 100 > 1;
+  const isTwoDigit = number / 10 >= 1 && number / 100 < 1;
+  const isThreeDigit = number / 100 >= 1;
 
   // for numbers 0 - 9
 
   if (isOneDigit) {
-    result = numberMap.units[number];
+    return (result = numberMap.units[number]);
   }
 
   //for 2 digit numbers
